@@ -51,7 +51,7 @@ public class ServoDegreeController {
         return (servo.getPosition()-min)/(max-min)*range;
     }
     public void setPositionRadians(double pos){
-        servo.setPosition((Math.toDegrees(pos)/Math.toDegrees(range))*(max-min)+min);
+        servo.setPosition((Math.toDegrees(pos)/range))*(max-min)+min);
     }
     public double getPositionRadians(){
         return Math.toRadians((servo.getPosition()-min)/(max-min)*range);
