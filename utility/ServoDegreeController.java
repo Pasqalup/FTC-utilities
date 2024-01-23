@@ -36,7 +36,7 @@ public class ServoDegreeController {
         this.max = 1;
     }
     public void setPositionDegrees(double pos){
-        servo.setPosition((pos/range)*(max-min)+min);
+        servo.setPosition(Math.max((pos/range)+min,max));
     }
     public void setPosition(double pos){
         //if(pos>1){
@@ -48,12 +48,12 @@ public class ServoDegreeController {
         return servo.getPosition();
     }
     public double getPositionDegrees(){
-        return (servo.getPosition()-min)/(max-min)*range;
+        return (servo.getPosition()-min)*range;
     }
     public void setPositionRadians(double pos){
-        servo.setPosition((Math.toDegrees(pos)/range))*(max-min)+min);
+        servo.setPosition(Math.max((Math.toDegrees(pos)/range))+min,max));
     }
     public double getPositionRadians(){
-        return Math.toRadians((servo.getPosition()-min)/(max-min)*range);
+        return Math.toRadians((servo.getPosition()-min)*range);
     }
 }
