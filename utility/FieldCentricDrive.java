@@ -102,4 +102,10 @@ public class FieldCentricDrive {
     public double getHeading(AngleUnit angleUnit){
         return imu.getRobotYawPitchRollAngles().getYaw(angleUnit);
     }
+    /**
+    * Reset the IMU
+    */
+    public void resetIMU(){
+        imu.resetYaw();
+    }
 }
