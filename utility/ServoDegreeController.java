@@ -39,6 +39,9 @@ public class ServoDegreeController {
         servo.setPosition((pos/range)*(max-min)+min);
     }
     public void setPosition(double pos){
+        //if(pos>1){
+        //    throw new IllegalArgumentException("Position exceeds limit between 0 and 1. Did you mean setPositionDegrees() or setPositionRadians()?")
+        //}
         servo.setPosition(pos);
     }
     public double getPosition(){
